@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <title>Emilio's Portfolio</title>
+    </head>
+    
+    <body>
+        
+                     <!-- Header Section: Contains Logo and Navigation -->
+
+        <header class="header">
+            <a href="home.html" class="logo"><img src="images/portfolio_branding-18.png" alt="Logo Emilio Pavon"></a>
+            
+                              <!-- Navigation Container -->
+
+            <div class="navbar-btns">
+                
+                               <!-- Main Navigation Menu -->
+
+            <nav class="navbar">
+                <a href="home.html" class="inactive">Home</a>
+                <a href="projects.html" class="inactive">Projects</a>
+                <a href="about.html" class="inactive">About me</a>
+                
+            </nav>
+                <a href="#" class="contact">Contact me</a>
+                </div>
+        </header>
+        
+                              <!-- Contact Form Area -->
+
+        
+        <section class="contact-form">
+           <div class="contact-instructions">
+             <div class="home-content"> <h1>Send me a<br><span>message →</span></h1></div>
+             <p>
+                    Please fill this form and i'll get in touch with you within the next three days.
+             </p>
+            </div>
+            
+            <div class="contact-body">
+            <form>
+                
+                              <!-- Form Questions Card -->
+
+                
+                <label for="fname">Full name</label><br>
+                <input type="text" id="fname" name="fname" size="30" maxlength="30"><br><br>
+                
+            
+                <label for="company">What is your company's name?</label><br>
+                <input type="text" id="company" name="company" size="30" maxlength="30"><br><br>
+                
+                <p>What do you need? (Select one)</p><br>
+                <input type="radio" id="project" name="delivery" value="project">
+                <label for="project">Product design project (UX/UX)</label><br>
+                
+                <input type="radio" id="consult" name="delivery" value="consult">
+                <label for="consult">UX / UI conuslting</label><br>
+                
+                <input type="radio" id="research" name="delivery" value="research">
+                <label for="research">UX research</label><br>
+                
+                <input type="radio" id="training" name="delivery" value="training">
+                <label for="training">Team training</label><br><br>
+                
+                <label for="project">What's it about?</label><br>
+                <textarea name="message" rows="10" cols="30"> Please write a brief description of your project.
+                </textarea><br><br>
+                
+                <input type="submit" value="Clear" class="clear">
+                <input type="reset" value="Send" class="contact">
+            </form>
+           </div>
+                
+        </section>

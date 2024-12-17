@@ -1,0 +1,537 @@
+/* General Styles
+-------------------------------------------------- */
+/* For this section assitance was obtained from the  W3schools for obtaining an applying a new font-family */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Montserrat;
+    text-decoration: none;
+    list-style: none;
+}
+
+/* Color Variables (for reference)
+   Primary: rgb(23, 61, 59) - Dark teal
+   Secondary: rgb(11, 214, 203) - Bright teal
+   Text: white/whitesmoke
+-------------------------------------------------- */
+
+/* Header and Navigation Styles
+-------------------------------------------------- */
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 8%;
+    background-color: black;
+    background: rgba(23, 61, 59);
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    z-index: 100; /* Ensures header stays above other content */
+   
+}
+
+/* Logo Styling */
+/* For this section I required the assitance of Claude which gave me the solution to how to increase and decrease the size of a component while hover. This is repeated in the next sections: 
+- logo:hover
+- inactive 
+- contact
+- btn-1
+- btn-2
+- clear
+*/
+
+.logo{
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s ease;
+
+}
+
+.logo:hover{
+    color: rgba(11, 214, 203);
+    transform: scale(1.1);
+    
+}
+
+span{
+    color: rgba(11, 214, 203);
+}
+
+/* Navigation Container and Links */
+
+.navbar-btns{
+    margin-left: 40%;
+    display: flex;
+    flex-direction: row;
+    min-width: 700px;
+
+    
+}
+
+
+.navbar a{
+    flex-direction: row;
+    margin: 24px;
+    justify-content: center;
+    padding: 8px 16px;
+    font-weight: 400;
+    color: white;
+
+   
+}
+.inactive a{
+    right: 0;
+    font-size: 14px;
+    color: white;
+    font-weight: 200;
+    margin: 10px 20px;
+    border-bottom:3px solid transparent;
+    transition: 0.3s ease;
+    padding: 10px;
+    
+}
+
+.navbar a:hover,
+.navbar a.active{
+    color: rgba(11, 214, 203);
+    border-bottom: 3px solid rgba(11, 214, 203);
+}
+
+.contact{
+    padding: 8px 24px;
+    background-color: rgb(11, 214, 203);
+    color: rgb(23, 61, 59);
+    border:2px solid rgb(23, 61, 59);
+    border-radius: 90px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    
+}
+
+.contact:hover{
+    background-color: rgba(23, 61, 59);
+    color: whitesmoke;
+    border:3px solid whitesmoke;
+    transition: 0.2s ease;
+
+
+}
+
+/* Home Page Styles
+-------------------------------------------------- */
+
+.home{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(23, 61, 59);
+    display: flex;
+    align-items: center;
+    column-gap: 3em;
+    padding: 30px 12% 0;
+    margin-top: 60px;
+    color: white;
+    
+}
+
+.home-content{
+    max-width: 800px;
+   
+}
+
+.h3-title{
+    border: 1px solid;
+    border-radius: 90px;
+    padding: 10px;
+    width: 95px;
+    align-items: center;
+    
+}
+
+.home-content h3{
+    font-size: 16px;
+    font-weight: 50;
+}
+
+.home-content h1{
+    font-size: 56px;
+    line-height: 1.2;
+}
+.home-content p{
+    font-size: 16px;
+    margin: 25px 0 30px;
+}
+
+#welcome-text {
+    border-right: 2px solid rgba(11, 214, 203);
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 16px;
+    font-weight: 50;
+}
+
+/* Animation for the cursor effect */
+@keyframes blink {
+    0% { border-right-color: rgba(11, 214, 203); }
+    50% { border-right-color: transparent; }
+    100% { border-right-color: rgba(11, 214, 203); }
+}
+
+#welcome-text {
+    animation: blink 0.75s infinite;
+}
+
+/* General Button Styles
+-------------------------------------------------- */
+.btn-box{
+    width: 345px;
+    display: flex;
+    column-gap: 2em;
+}
+.btn-1{
+    padding: 15px 28px;
+    background-color: rgb(11, 214, 203);
+    color: rgb(23, 61, 59);
+    border: 2px solid transparent;
+    border-radius: 90px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+}
+.btn-1:hover{
+    background-color: rgb(23, 61, 59);
+    color: white;
+    border: 2px solid white;
+}
+
+.experience {
+    width: 100%;
+    min-height: 100vh;
+    background-color:whitesmoke;
+    display: flex;
+    align-items:flex-start;
+    column-gap: 3em;
+    padding: 16px 8% 0;
+    margin-top: 10px;
+    flex-direction: column;
+ 
+}
+
+.experience-content{
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    color: rgb(23, 61, 59);
+    
+}
+
+.wrapper{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 200px 200px 200px;
+    column-gap: 25px;
+    row-gap: 25px;
+    
+}
+
+.box1{
+    border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size:80px;
+    grid-column: 1/5;
+    grid-row: 1; 
+    background-color: rgb(23, 61, 59);
+    color: whitesmoke;
+    min-width: 800px;
+}
+.box2{
+     border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size: 100px;
+    grid-column: 1/4;
+    grid-row: 2; 
+    background-color: rgb(11, 214, 203);
+    color: rgb(23, 61, 59);
+        min-width: 800px;
+
+}
+.box3{
+    border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size: 100px;
+    grid-column: 4/5;
+    grid-row: 2; 
+    color: rgb(23, 61, 59);
+}
+
+.box4{
+    border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size: 100px;
+    grid-column: 1/5;
+    grid-row: 3; 
+    color: rgb(23, 61, 59);
+}
+
+.box5{
+    border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size: 100px;
+    grid-column: 1/4;
+    grid-row: 4; 
+    background-color: rgb(23, 61, 59);
+    color: whitesmoke;
+    border-color: rgb(11, 214, 203)
+}
+
+.box6{
+    border: 3px solid;
+    border-radius: 90px;
+    padding:40px;
+    align-content: center;
+    font-size: 100px;
+    grid-column: 4/5;
+    grid-row: 4; 
+    background-color: rgb(11, 214, 203);
+    color: rgb(23, 61, 59);
+}
+
+/* General Footer Navigation Styles
+-------------------------------------------------- */
+
+.footer{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 8%;
+    background-color: whitesmoke;
+    margin-top: 56px;
+    
+    
+}
+.cta-1{
+    width: 30%;
+    display: flex;
+    padding: 24px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    margin-right: 88px;
+    color: rgb(23, 61, 59);
+    font-size: 40px;
+     
+}
+
+.cta-2{
+    width: 700%;
+    display: flex;
+    padding: 24px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    color: rgb(23, 61, 59);
+    font-size: 40px;
+    border-bottom: 3px solid rgba(11, 214, 203);
+      min-width: 700px;  
+}
+
+/* About Page Specific Styles
+-------------------------------------------------- */
+.about-content{
+    width: 100%;
+    min-height: 30vh;
+    background: whitesmoke;
+    display: flex;
+    align-items: center;
+    column-gap: 3em;
+    padding: 56px 12% 0;
+    margin-bottom: 56px;
+    color:  rgb(23, 61, 59); 
+    display: flex;
+    flex-direction: column;
+}
+
+.about-description{
+    width: 70%;
+    padding-top: 20px;
+    font-weight: 600;
+    line-height: 1.5;
+    text-align: center;
+        
+}
+
+.about-h1{
+    font-size: 32px
+}
+
+/* Projects Page Specific Styles
+-------------------------------------------------- */
+
+.wrapper-projects{
+   
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(200px, 1fr);
+    grid-template-rows: 300px 300px 300px;
+    column-gap: 25px;
+    row-gap: 25px;
+}
+
+/* Projects Page Specific Styles
+-------------------------------------------------- */
+
+.box-project{
+    width: 100%;
+    min-width: 1000px;
+    max-width: 1920px;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    padding: 25px 2%;
+    margin-top: 48px;
+    margin-bottom: 38px;
+    border: 3px solid;
+    border-radius: 20px;
+    background-color: whitesmoke;
+    color: rgb(23, 61, 59);
+    
+}
+
+/* In this section I had a problem because I didn't manage to align all three images even though that they all had the same class
+*/
+
+.h1-project{
+    font-size: 56px;
+    font-weight: 600;
+    margin: 16px;
+    padding: 15px 2%;
+    
+}
+
+.description-project{
+    font-size: 16px;
+    font-weight: 200;
+    margin-left: 32px;
+}
+
+.experience-1{
+    width: 100%;
+    min-height: 100vh;
+    background:whitesmoke;
+    display: flex;
+    align-items:center;
+    column-gap: 1em;
+    padding: 40px 8% 0;
+    margin-top: 0px;
+    flex-direction: column;
+}
+
+.image-project{
+    display:flex;
+    flex-direction: row;
+}
+
+.btn-2{
+    padding: 15px 28px;
+    background-color: rgb(11, 214, 203);
+    color: rgb(23, 61, 59);
+    border: 2px solid transparent;
+    border-radius: 90px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+    cursor: pointer;
+    margin-top: 30px;
+}
+.btn-2:hover{
+    background-color: rgb(23, 61, 59);
+    color: white;
+    border: 2px solid white;
+}
+
+.projects{
+
+    width: 100%;
+    min-height: 40vh;
+    background: rgb(23, 61, 59);
+    display: flex;
+    align-items: center;
+    padding: 30px 12% 0;
+    margin-top: 60px;
+    color: white;
+    font-size: 24px;
+    align-content: center;
+    
+}
+.projects-content{
+   text-align: center;
+}
+
+.btn-box1{
+    width: 100%;
+    column-gap: 2em;
+    margin-top: 40px;
+}
+
+/* Contact Page Specific Styles
+-------------------------------------------------- */
+.contact-form{
+    width: 100%;
+    min-height: 100vh;
+    background: rgb(23, 61, 59);
+    display: flex;
+    align-items: center;
+    column-gap: 8em;
+    padding: 30px 12% 0;
+    margin-top: 60px;
+    color: white;
+    
+}
+.contact-instructions{
+   display: flex;
+   flex-direction: column;
+}
+
+.contact-body{
+   border: 1px solid;
+    border-radius: 20px;
+    border-color: white;
+    padding: 24px;
+    align-items: center;
+    box-shadow: 10px 10px 5px rgb(16, 38, 37);
+
+}
+
+.clear{
+   padding: 8px 24px;
+    background-color: rgb(23, 61, 59);
+    color: whitesmoke;
+    border:2px solid whitesmoke;
+    border-radius: 90px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: 0.3s ease;
+     
+}
