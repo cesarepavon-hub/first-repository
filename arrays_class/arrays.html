@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping List Manager</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .list-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        button {
+            padding: 5px 10px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping List Manager</h1>
+    <p>Open the console (F12) to see debug messages!</p>
+
+    <!-- Input for new items -->
+    <input type="text" id="newItem" placeholder="Enter item name">
+    <button onclick="addItem()">Add Item</button>
+    <button onclick="removeLastItem()">Remove Last Item</button>
+
+    <!-- Display area for the list -->
+    <div id="shoppingList"></div>
+
+    <script>
+        // Initialize our shopping list array
+        let shoppingList = [
+            "Milk",
+            "Bread",
+            "Eggs"
+        ];
+
+        // Function to display the list
+        function displayList() {
+            // Debug message
+            console.log("Displaying list:", shoppingList);
+
+            const listDiv = document.getElementById('shoppingList');
+            listDiv.innerHTML = '<h2>Your Shopping List:</h2>';
+            
+            // Using array forEach to iterate through items
+            shoppingList.forEach((item, index) => {
+                // Debug message for each item
+                console.log(`Processing item ${index}: ${item}`);
+                
+                const itemDiv = document.createElement('div');
+                itemDiv.className = 'list-item';
+                itemDiv.textContent = `${index + 1}. ${item}`;
+                listDiv.appendChild(itemDiv);
+            });
+        }
+
+        // Function to add a new item
+        function addItem() {
+            const input = document.getElementById('newItem');
+            const newItem = input.value.trim();
+
+            if (newItem) {
+                // Debug message
+                console.log("Adding new item:", newItem);
+                
+                // Using array push to add item
+                shoppingList.push(newItem);
+                input.value = '';
+                displayList();
+            } else {
+                console.error("Error: Cannot add empty item");
+            }
+        }
+
+        // Function to remove the last item
+        function removeLastItem() {
+            // Debug message
+            console.log("Removing last item:", shoppingList[shoppingList.length - 1]);
+            
+            // Using array pop to remove last item
+            shoppingList.pop();
+            displayList();
+        }
+
+        // Initial display
+        displayList();
+    </script>
+</body>
+</html>
