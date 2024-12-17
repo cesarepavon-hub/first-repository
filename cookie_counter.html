@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cookie Counter Basic</title>
+</head>
+<body>
+    <h1>Total Cookies: <span id="total">0</span></h1>
+    <button onclick="addCookie()">Add Cookie</button>
+    <button onclick="resetCookies()">Reset</button>
+
+    <script>
+        // Global variable for counter
+        let totalCookies = Number(localStorage.getItem('totalCookies')) || 0;
+
+        // Function to update display
+        function updateDisplay() {
+            document.getElementById('total').textContent = totalCookies;
+        }
+
+        // Function to add cookie
+        function addCookie() {
+            totalCookies++;
+            localStorage.setItem('totalCookies', totalCookies);
+            
+            // Create current cookie
+            document.cookie = `cookie${totalCookies}=1; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/`;
+            
+            updateDisplay();
+        }
+
+        // Function to reset everything
+        function resetCookies() {
+            totalCookies = 0;
+            localStorage.setItem('totalCookies', totalCookies);
+            
+            // Remove all cookies
+            let cookies = document.cookie.split(";");
+            for (let cookie of cookies) {
+                let name = cookie.split("=")[0].trim();
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;`;
+            }
+            
+            updateDisplay();
+        }
+
+        // Initialize display
+        updateDisplay();
+    </script>
+</body>
+</html>

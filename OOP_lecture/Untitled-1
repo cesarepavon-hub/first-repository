@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+    <header>
+        <h1>Mi Portafolio</h1>
+    </header>
+
+    <main id="portafolio">
+        <!-- Aquí se insertarán los proyectos -->
+    </main>
+
+    <script src="script.js"></script>
+    <script>
+        // Crear instancia del portafolio
+        const miPortafolio = new Portafolio();
+
+        // Crear los proyectos
+        const proyecto1 = new Proyecto(
+            "Proyecto 1",
+            "Este es mi primer proyecto increíble",
+            "imagen1.jpg",
+            "https://proyecto1.com"
+        );
+
+        const proyecto2 = new Proyecto(
+            "Proyecto 2",
+            "Mi segundo proyecto asombroso",
+            "imagen2.jpg",
+            "https://proyecto2.com"
+        );
+
+        const proyecto3 = new Proyecto(
+            "Proyecto 3",
+            "Mi tercer proyecto espectacular",
+            "imagen3.jpg",
+            "https://proyecto3.com"
+        );
+
+        // Agregar proyectos al portafolio
+        miPortafolio.agregarProyecto(proyecto1);
+        miPortafolio.agregarProyecto(proyecto2);
+        miPortafolio.agregarProyecto(proyecto3);
+
+        // Mostrar los proyectos
+        miPortafolio.mostrarProyectos();
+    </script>
+</body>
+</html>
