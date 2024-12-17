@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FOR Loop Example - Shopping List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .output {
+            background: #f0f0f0;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 5px;
+        }
+        .item {
+            margin: 5px 0;
+            padding: 5px;
+            background: white;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Shopping List Example</h1>
+    <p>This shows how a FOR loop can be used to go through a shopping list</p>
+    
+    <button onclick="showShoppingList()">Show My Shopping List</button>
+    <div id="output" class="output"></div>
+
+    <script>
+        function showShoppingList() {
+            // Our shopping list array
+            const shoppingList = [
+                "Milk",
+                "Bread",
+                "Eggs",
+                "Cheese",
+                "Apples"
+            ];
+
+            let output = "<h3>My Shopping List:</h3>";
+
+            // Using FOR loop because we know exactly how many items we have
+            // We want to go through each item and number them
+            for (let i = 0; i < shoppingList.length; i++) {
+                // i + 1 because we want to start counting from 1, not 0
+                output += `<div class="item">
+                    Item ${i + 1}: ${shoppingList[i]}
+                </div>`;
+            }
+
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+</body>
+</html>
