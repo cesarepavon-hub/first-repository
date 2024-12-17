@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Practice</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .section {
+            background: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .result {
+            background: #e8f4ff;
+            padding: 10px;
+            margin: 10px 0;
+            border-left: 4px solid #0066cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Practice Exercises</h1>
+
+    <!-- Variables Section -->
+    <div class="section">
+        <h2>1. Variables Exercise</h2>
+        <div id="variablesResult" class="result">Results will appear here...</div>
+    </div>
+
+    <!-- Functions Section -->
+    <div class="section">
+        <h2>2. Functions Exercise</h2>
+        <button onclick="incrementScore()">Add Score</button>
+        <button onclick="displayScore()">Display Score</button>
+        <div id="scoreResult" class="result">Score will appear here...</div>
+    </div>
+
+    <!-- Conditions Section -->
+    <div class="section">
+        <h2>3. Conditions Exercise</h2>
+        <button onclick="checkScore()">Check if Score is Odd/Even</button>
+        <div id="checkResult" class="result">Result will appear here...</div>
+    </div>
+
+    <script>
+        // Variables Exercise
+        let playerName = "John";
+        let playerHealth = 100;
+        let isGameOver = false;
+        let currentLevel = 1;
+
+        // Change values
+        playerHealth = 80;
+        currentLevel = 2;
+
+        // Array with 5 items
+        let inventory = ["sword", "shield", "potion", "map", "compass"];
+
+        // Display variables results
+        document.getElementById('variablesResult').innerHTML = `
+            Player Name: ${playerName}<br>
+            Player Health: ${playerHealth}<br>
+            Game Over: ${isGameOver}<br>
+            Current Level: ${currentLevel}<br>
+            Second Item in Inventory: ${inventory[1]}<br>
+            Third Item in Inventory: ${inventory[2]}
+        `;
+
+        // Functions Exercise
+        let playerScore = 0;
+
+        function incrementScore() {
+            playerScore += 1;
+            displayScore();
+        }
+
+        function displayScore() {
+            document.getElementById('scoreResult').innerHTML = `
+                Current Score: ${playerScore}
+            `;
+        }
+
+        // Conditions Exercise
+        function checkScore() {
+            let message = playerScore % 2 === 0 ? 
+                "Your score is even!" : 
+                "Your score is odd!";
+            
+            document.getElementById('checkResult').innerHTML = message;
+        }
+
+        // Initialize displays
+        displayScore();
+    </script>
+</body>
+</html>
