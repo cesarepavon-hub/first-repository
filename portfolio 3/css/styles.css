@@ -187,6 +187,8 @@ span{
     animation: blink 0.75s infinite;
 }
 
+
+
 /* General Button Styles
 -------------------------------------------------- */
 .btn-box{
@@ -254,6 +256,8 @@ span{
     background-color: rgb(23, 61, 59);
     color: whitesmoke;
     min-width: 800px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 .box2{
      border: 3px solid;
@@ -266,6 +270,8 @@ span{
     background-color: rgb(11, 214, 203);
     color: rgb(23, 61, 59);
         min-width: 800px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 
 }
 .box3{
@@ -277,6 +283,8 @@ span{
     grid-column: 4/5;
     grid-row: 2; 
     color: rgb(23, 61, 59);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .box4{
@@ -288,6 +296,8 @@ span{
     grid-column: 1/5;
     grid-row: 3; 
     color: rgb(23, 61, 59);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .box5{
@@ -300,7 +310,9 @@ span{
     grid-row: 4; 
     background-color: rgb(23, 61, 59);
     color: whitesmoke;
-    border-color: rgb(11, 214, 203)
+    border-color: rgb(11, 214, 203);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .box6{
@@ -313,7 +325,15 @@ span{
     grid-row: 4; 
     background-color: rgb(11, 214, 203);
     color: rgb(23, 61, 59);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
+.box1:hover, .box2:hover, .box3:hover, 
+.box4:hover, .box5:hover, .box6:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
 
 /* General Footer Navigation Styles
 -------------------------------------------------- */
@@ -340,6 +360,7 @@ span{
     margin-right: 88px;
     color: rgb(23, 61, 59);
     font-size: 40px;
+    
      
 }
 
@@ -382,6 +403,39 @@ span{
 
 .about-h1{
     font-size: 32px
+}
+
+.stats-section {
+    
+    padding: 60px 0;
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.stat-box {
+    text-align: center;
+    color: white;
+    margin: 20px;
+}
+
+.stat-number {
+    font-size: 48px;
+    font-weight: bold;
+    display: block;
+    color: rgb(11, 214, 203);
+}
+
+.stat-label {
+    font-size: 18px;
+    margin-top: 10px;
+    display: block;
 }
 
 /* Projects Page Specific Styles
