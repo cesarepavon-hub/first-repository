@@ -1,3 +1,5 @@
+//1. Fade in animation and typing effect
+
 // Wait for the page to load
 document.addEventListener('DOMContentLoaded', function() {
     // Text to be typed
@@ -41,8 +43,14 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(typeText, 500);
 });
 
-// First check if everything is loading properly
+// Checking if everything is loading properly because it was crashing for some reason
 console.log("Script is running");
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+//2. Smooth scroll up when clicking on the "back" button
 
 document.addEventListener('DOMContentLoaded', function() {
     // Check if we can find the button
@@ -61,54 +69,45 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//3. Hover function for skills. They won't take us anywhere now but in future developments they are buttons to take us to related experiences. 
+
 function initSkillBoxes() {
     'use strict';
     
-    // Skill descriptions
-    var skillInfo = {
-        skill1: "Creating user-centered solutions through research, testing, and iteration",
-        skill2: "Conducting user research to understand needs, behaviors, and pain points",
-        skill3: "Specialized in financial technology interfaces and systems",
-        skill4: "Expert in creating intuitive banking applications and platforms",
-        skill5: "Conducting thorough user testing sessions to validate designs",
-        skill6: "Creating beautiful and functional user interfaces"
-    };
+    // Get all skill boxes by their class names
+    var boxes = document.querySelectorAll('.box1, .box2, .box3, .box4, .box5, .box6');
+    
+    // Add hover effect to each box
+    boxes.forEach(function(box) {
+        box.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.02)';
+        });
 
-    // Add click listeners to all skill boxes
-    Object.keys(skillInfo).forEach(function(skillId) {
-        var skillBox = document.getElementById(skillId);
-        var originalText = skillBox.textContent;
-        
-        if (skillBox) {
-            skillBox.addEventListener('click', function() {
-                if (skillBox.dataset.expanded === 'true') {
-                    // Return to original state
-                    skillBox.textContent = originalText;
-                    skillBox.dataset.expanded = 'false';
-                    skillBox.style.fontSize = '';
-                } else {
-                    // Show description
-                    skillBox.textContent = skillInfo[skillId];
-                    skillBox.dataset.expanded = 'true';
-                    skillBox.style.fontSize = '24px';
-                }
-            });
-
-            // Add hover effect
-            skillBox.addEventListener('mouseenter', function() {
-                if (skillBox.dataset.expanded !== 'true') {
-                    skillBox.style.transform = 'scale(1.02)';
-                }
-            });
-
-            skillBox.addEventListener('mouseleave', function() {
-                if (skillBox.dataset.expanded !== 'true') {
-                    skillBox.style.transform = 'scale(1)';
-                }
-            });
-        }
+        box.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+        });
     });
 }
+
+// Initialize when DOM loads
+document.addEventListener('DOMContentLoaded', function() {
+    initSkillBoxes();
+});
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+//4. Dynamic project counter in the About Me page. 
+
 
 // Initialize when DOM loads (add this to your existing DOMContentLoaded event)
 document.addEventListener('DOMContentLoaded', function() {
